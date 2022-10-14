@@ -7,12 +7,26 @@ rows from each of the inputs along with an additional column that has the
 filename from which the row came (only the file's basename, not the entire path).
 Use `filename` as the header for the additional column.
 
-## Example
-Given two input files named `clothing.csv` and `accessories.csv`.
+## To Run
+
+Run the following to output to `stdout`
 ```
-$ python3 combine_csv.py clothing.csv accessories.csv
+$  python3 ./combine_csv.py ./fixtures/accessories.csv ./fixtures/clothing.csv ./fixtures/household_cleaners.csv 
 
 ```
+Run the following to output as a combined csv file
+```
+$  python3 ./combine_csv.py ./fixtures/accessories.csv ./fixtures/clothing.csv ./fixtures/household_cleaners.csv > combined.csv
+
+```
+## To Run Unit Tests
+```
+$  python3 -m unittest test_combine_csv.py
+
+```
+
+## Example
+Given two input files named `clothing.csv` and `accessories.csv`.
 
 |email_hash|category|
 |----------|--------|
@@ -35,9 +49,4 @@ Your script would output
 |176146e4ae48e70df2e628b45dccfd53405c73f951c003fb8c9c09b3207e7aab|Wallets|accessories.csv|
 |63d42170fa2d706101ab713de2313ad3f9a05aa0b1c875a56545cfd69f7101fe|Purses|accessories.csv|
 
-## To Run
-```
-$  python3 combine_csv.py <CSV file names seperated by space>
-
-```
 
